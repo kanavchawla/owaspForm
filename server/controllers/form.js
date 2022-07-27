@@ -50,4 +50,20 @@ async function deleteMember(req, res) {
     res.json(err, message)
   }
 }
-export { addMember, getMembers, updateMemberDetails, deleteMember }
+async function getMemberById(req, res) {
+  try {
+    const { id } = req.params
+    const user = await Form.findById(id)
+    if (!user) res.json('User not found')
+    res.status(200).json(user)
+  } catch (err) {
+    res.json(err.message)
+  }
+}
+export {
+  addMember,
+  getMembers,
+  updateMemberDetails,
+  deleteMember,
+  getMemberById,
+}
