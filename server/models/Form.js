@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 const schema = mongoose.Schema
-const formSchema = new schema(
+const formSchemaa = new schema(
   {
     name: {
       type: String,
@@ -20,5 +20,5 @@ const formSchema = new schema(
   },
   { timestamps: true },
 )
-const Form = mongoose.model('Form', formSchema)
+const Form = mongoose.model('Form', formSchemaa)
 export default Form
